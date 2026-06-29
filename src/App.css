@@ -62,7 +62,7 @@ section {
   z-index: -1;
   height: 100%;
   width: 100%;
-  background-image: url("/public/models/background.png");
+background-image: url("../assets/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   transition: all .3s linear;

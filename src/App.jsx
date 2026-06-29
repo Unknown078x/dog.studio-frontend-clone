@@ -3,19 +3,20 @@ import './App.css'
 import Dog from './components/Dog'
 
 function App() {
+  const BASE = import.meta.env.BASE_URL;
 
   return (
     <>
       <main>
-        <div className="images">
-          <img id='oneBg' src="/public/models/one.png" alt="" />
-          <img id='twoBg' src="/public/models/two.png" alt="" />
-          <img id='threeBg' src="/public/models/three.png" alt="" />
-          <img id='fourBg' src="/public/models/four.png" alt="" />
-          <img id='fiveBg' src="/public/models/five.png" alt="" />
-          <img id='sixBg' src="/public/models/sixth.png" alt="" />
-          <img id='sevenBg' src="/public/models/seventh.png" alt="" />
-        </div>
+       <div className="images">
+  <img id="oneBg" src={`${BASE}models/one.png`} alt="" />
+  <img id="twoBg" src={`${BASE}models/two.png`} alt="" />
+  <img id="threeBg" src={`${BASE}models/three.png`} alt="" />
+  <img id="fourBg" src={`${BASE}models/four.png`} alt="" />
+  <img id="fiveBg" src={`${BASE}models/five.png`} alt="" />
+  <img id="sixBg" src={`${BASE}models/sixth.png`} alt="" />
+  <img id="sevenBg" src={`${BASE}models/seventh.png`} alt="" />
+</div>
         <Canvas
           id='canvas'
           style={{
