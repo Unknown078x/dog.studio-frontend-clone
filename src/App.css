@@ -1,0 +1,567 @@
+@font-face {
+  font-family: "GT";
+  src: url("/public/fonts/GTSectraDisplay-Regular.woff2");
+}
+
+@font-face {
+  font-family: "gilroy";
+  src: url("/public/fonts/Gilroy-Medium.woff2");
+}
+
+@font-face {
+  font-family: "heebo";
+  src: url("/public/fonts/Heebo-Regular.woff2");
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("/public/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "heebo-thin";
+  src: url("/public/fonts/Heebo-Thin.woff2");
+}
+
+@font-face {
+  font-family: "heebo-mid";
+  src: url("/public/fonts/Heebo-Medium.woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  background-color: black;
+  width: 100%;
+  color: white;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+section {
+  /* min-height: 100vh; */
+  position: relative;
+  z-index: 3;
+  /* border: 2px solid white; */
+}
+
+#canvas::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-image: url("/public/models/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all .3s linear;
+}
+
+
+#section1 {
+  min-height: 175vh;
+  position: relative;
+
+  /*------------------------------ navigation bar -------------------------------*/
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8vh 6vh;
+    height: 5vh;
+    width: 100vw;
+
+    svg {
+      height: 4vh;
+    }
+
+    .sh {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 18vh;
+      margin-left: -15vw;
+    }
+
+    .sh i {
+      color: red;
+    }
+
+    .elem {
+      font-family: "heebo";
+      font-size: 13.2px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .elem i {
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+
+  /*------------------------------ Middle part -------------------------------*/
+
+  .middle {
+    display: flex;
+    /* background-color: green; */
+
+    .left {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      font-family: "GT";
+      padding-top: 15vh;
+    }
+
+    .left h1 {
+      font-size: 17vh;
+      line-height: 15vh;
+      /* font-weight: 500; */
+    }
+
+  }
+
+
+  /*------------------------------ Bottom part -------------------------------*/
+
+  .bottom {
+    display: flex;
+    /* background-color: blue; */
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .right {
+      padding-top: 16vh;
+      padding-left: 15vh;
+      display: flex;
+      flex-direction: column;
+
+      .para {
+        p {
+          font-size: 3.3vh;
+          font-weight: 100;
+          line-height: 5vh;
+          font-family: "heebo-thin";
+        }
+      }
+
+      .pa {
+        font-family: "heebo";
+        color: #767C9B;
+        font-size: 14px;
+        line-height: 24px;
+        padding-top: 20px;
+      }
+
+      .tags {
+        display: flex;
+        margin-top: 8vh;
+      }
+
+      .tags a {
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        font-family: "heebo";
+        transition: all ease-in-out .5s;
+      }
+
+      .tags a:hover {
+        color: #c9ccdd;
+      }
+    }
+  }
+
+  /*----------------------------- red lines part ----------------------------- */
+
+  .firstRed {
+    position: absolute;
+    width: 45vw;
+    background-color: rgb(255, 88, 88);
+    height: 1px;
+    top: 45%;
+    left: -4%;
+    transform: rotate(45deg);
+  }
+
+  .redTop {
+    background-color: rgb(255, 88, 88);
+    position: absolute;
+    top: 24%;
+    right: 17%;
+    height: 1px;
+    width: 12vw;
+    transform: rotate(-45deg);
+  }
+
+
+}
+
+#section2 {
+  min-height: 160vh;
+  position: relative;
+
+  .firstRed {
+    position: absolute;
+    width: 45vw;
+    background-color: rgb(255, 88, 88);
+    height: 1px;
+    top: 85%;
+    right: -10%;
+    transform: rotate(-45deg);
+  }
+
+
+  h1 {
+    font-family: "GT";
+    font-size: 7.5px;
+    padding-left: 33vh;
+    padding-bottom: 4.7vh;
+    color: rgba(255, 255, 255, 0.496);
+    letter-spacing: 6px;
+  }
+
+  /*-------------------------- Wrapper thing -------------------------- */
+  .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .head {
+      color: rgba(181, 181, 181, 0.333);
+      height: 19vh;
+      display: flex;
+      gap: 10vh;
+      cursor: pointer;
+      transition: all .3s linear;
+
+
+      .time {
+        width: 11%;
+        text-align: right;
+        font-family: "gilroy";
+        padding-top: 3.6vh;
+        font-size: 10px;
+        letter-spacing: 4px;
+      }
+
+      .line {
+        font-family: "heebo-thin";
+        font-size: 12vh;
+      }
+    }
+
+    .head:hover {
+      color: white;
+    }
+  }
+
+}
+
+
+#section3 {
+  min-height: initial;
+  position: relative;
+  display: flex;
+  z-index: 0;
+
+  .firstRed {
+    position: absolute;
+    width: 17vw;
+    background-color: rgb(255, 45, 45);
+    height: 1px;
+    bottom: 35%;
+    left: 15%;
+    transform: rotate(45deg);
+  }
+
+  .leftPara {
+    width: 58%;
+    margin-top: 36vh;
+    padding-left: 33vh;
+
+    h3 {
+      opacity: .4;
+      font-family: "gilroy";
+      font-size: 8px;
+      letter-spacing: 6px;
+    }
+
+    p {
+      padding-top: 5vh;
+      font-family: "GT";
+      font-size: 6vh;
+    }
+  }
+
+
+  .btn {
+    width: max-content;
+    position: absolute;
+    z-index: 5;
+    right: 49%;
+    bottom: 35%;
+    text-align: right;
+    cursor: pointer;
+
+    h1 {
+      font-size: 1.8vh;
+      font-family: "gilroy";
+      padding-bottom: 10px;
+    }
+
+    .redline {
+      height: 2px;
+      width: 20vh;
+      transition: all linear .3s;
+      background-color: red;
+    }
+
+
+  }
+
+  .btn:hover .redline {
+    width: 16vh;
+  }
+
+}
+
+#section4 {
+  display: flex;
+  height: 95vh;
+
+  .firstRed {
+    position: absolute;
+    width: 17vw;
+    background-color: rgb(255, 45, 45);
+    height: 1px;
+    bottom: 35%;
+    left: 15%;
+    transform: rotate(45deg);
+  }
+
+  .leftPara {
+    position: relative;
+    z-index: 1;
+    width: 58%;
+    margin-top: 36vh;
+    padding-left: 33vh;
+
+    h3 {
+      opacity: .4;
+      font-family: "gilroy";
+      font-size: 8px;
+      letter-spacing: 6px;
+    }
+
+    p {
+      padding-top: 5vh;
+      font-family: "GT";
+      font-size: 6vh;
+    }
+  }
+
+  .right {
+    width: 40%;
+    gap: 8vh;
+    margin-left: -30vh;
+    display: flex;
+
+    p {
+      font-family: "heebo";
+      color: rgb(171, 171, 255);
+      opacity: .4;
+      width: 35%;
+    }
+  }
+
+  .btn {
+    width: 20vh;
+    position: absolute;
+    z-index: 5;
+    right: 49%;
+    bottom: 61%;
+    cursor: pointer;
+    text-align: right;
+
+    h1 {
+      font-size: 1.8vh;
+      font-family: "gilroy";
+      padding-bottom: 10px;
+    }
+
+    .redline {
+      text-align: right;
+      height: 2px;
+      width: 20vh;
+      transition: all linear .3s;
+      background-color: red;
+    }
+
+
+  }
+
+  .btn:hover .redline {
+    width: 16vh;
+  }
+
+  .bottom {
+    background: #000000a4;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.31) 65%, transparent 100%);
+    height: 200vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 12%;
+    right: 17.5%;
+    text-align: right;
+    font-family: "GT";
+    font-size: 20px;
+  }
+
+  .container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+
+    .up {
+      display: flex;
+      padding-bottom: 70px;
+      align-items: center;
+      justify-content: space-between;
+      font-family: "heebo-thin";
+
+      .l {
+        display: flex;
+        gap: 70px;
+        font-size: 3vh;
+
+        span {
+          color: red;
+        }
+      }
+
+      h2 {
+        font-size: 11px;
+        cursor: pointer;
+      }
+    }
+
+    .down {
+      border-top: 1px solid rgb(76, 76, 76);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .l,
+      .r {
+        font-family: "heebo-thin";
+        display: flex;
+        gap: 50px;
+        padding: 30px 0px;
+
+        h3 {
+          font-size: 12px;
+          color: rgb(206, 203, 255);
+        }
+
+        h4 {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+main:has(#section2 .head:hover) #canvas::after {
+  opacity: 0;
+}
+
+main:has(#section2 .head[img-title="oneBg"]:hover) #oneBg {
+  opacity: 1;
+  background-color: #000026;
+}
+
+main:has(#section2 .head[img-title="twoBg"]:hover) #twoBg {
+  opacity: 1;
+  background-color: #000026;
+}
+
+main:has(#section2 .head[img-title="threeBg"]:hover) #threeBg {
+  opacity: 1;
+  background-color: #000038;
+}
+
+main:has(#section2 .head[img-title="fourBg"]:hover) #fourBg {
+  opacity: 1;
+  background-color: #00001f;
+}
+
+main:has(#section2 .head[img-title="fiveBg"]:hover) #fiveBg {
+  opacity: 1;
+  background-color: #00007c;
+}
+
+main:has(#section2 .head[img-title="sixBg"]:hover) #sixBg {
+  opacity: 1;
+  background-color: #001c20;
+}
+
+main:has(#section2 .head[img-title="sevenBg"]:hover) #sevenBg {
+  opacity: 1;
+  background-color: #850000;
+}
+
+.images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .3s linear;
+  }
+}
