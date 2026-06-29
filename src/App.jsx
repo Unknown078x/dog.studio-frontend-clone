@@ -1,6 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import './App.css'
 import Dog from './components/Dog'
+import background from "./assets/background.png";
 
 function App() {
   const BASE = import.meta.env.BASE_URL;
@@ -25,7 +26,8 @@ function App() {
             position: "fixed",
             top: 0,
             left: 0,
-            zIndex: 2
+            zIndex: 2,
+            backgroundImage: `url(${background})`
           }}>
           <Dog />
         </Canvas>
