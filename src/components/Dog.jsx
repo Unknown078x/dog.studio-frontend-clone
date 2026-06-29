@@ -10,62 +10,64 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Dog = () => {
 
-    gsap.registerPlugin(useGSAP())
+    gsap.registerPlugin(useGSAP)
     gsap.registerPlugin(ScrollTrigger)
 
 
-    const [
-        mat1,
-        mat2,
-        mat3,
-        mat4,
-        mat5,
-        mat6,
-        mat7,
-        mat8,
-        mat9,
-        mat10,
-        mat11,
-        mat12,
-        mat13,
-        mat14,
-        mat15,
-        mat16,
-        mat17,
-        mat18,
-        mat19,
-        mat20
-    ] = (useTexture([
-        "/matcap/mat-1.png",
-        "/matcap/mat-2.png",
-        "/matcap/mat-3.png",
-        "/matcap/mat-4.png",
-        "/matcap/mat-5.png",
-        "/matcap/mat-6.png",
-        "/matcap/mat-7.png",
-        "/matcap/mat-8.png",
-        "/matcap/mat-9.png",
-        "/matcap/mat-10.png",
-        "/matcap/mat-11.png",
-        "/matcap/mat-12.png",
-        "/matcap/mat-13.png",
-        "/matcap/mat-14.png",
-        "/matcap/mat-15.png",
-        "/matcap/mat-16.png",
-        "/matcap/mat-17.png",
-        "/matcap/mat-18.png",
-        "/matcap/mat-19.png",
-        "/matcap/mat-20.png",
-    ])).map(texture => {
-        texture.colorSpace = THREE.SRGBColorSpace
-        return texture
-    })
+const BASE = import.meta.env.BASE_URL;
+
+const [
+    mat1,
+    mat2,
+    mat3,
+    mat4,
+    mat5,
+    mat6,
+    mat7,
+    mat8,
+    mat9,
+    mat10,
+    mat11,
+    mat12,
+    mat13,
+    mat14,
+    mat15,
+    mat16,
+    mat17,
+    mat18,
+    mat19,
+    mat20
+] = useTexture([
+    `${BASE}matcap/mat-1.png`,
+    `${BASE}matcap/mat-2.png`,
+    `${BASE}matcap/mat-3.png`,
+    `${BASE}matcap/mat-4.png`,
+    `${BASE}matcap/mat-5.png`,
+    `${BASE}matcap/mat-6.png`,
+    `${BASE}matcap/mat-7.png`,
+    `${BASE}matcap/mat-8.png`,
+    `${BASE}matcap/mat-9.png`,
+    `${BASE}matcap/mat-10.png`,
+    `${BASE}matcap/mat-11.png`,
+    `${BASE}matcap/mat-12.png`,
+    `${BASE}matcap/mat-13.png`,
+    `${BASE}matcap/mat-14.png`,
+    `${BASE}matcap/mat-15.png`,
+    `${BASE}matcap/mat-16.png`,
+    `${BASE}matcap/mat-17.png`,
+    `${BASE}matcap/mat-18.png`,
+    `${BASE}matcap/mat-19.png`,
+    `${BASE}matcap/mat-20.png`,
+]).map(texture => {
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+});
 
 
 
 
 
-    const model = useGLTF("/models/dog.drc.glb")
+    const model = useGLTF(`${BASE}models/dog.drc.glb`);
 
     useThree(({ camera, scene, gl }) => {
         camera.position.z = 0.5
@@ -85,17 +87,19 @@ const Dog = () => {
         uProgress: { value: 1.0 }
     })
 
-    const [normalMap, sampleMatCap] = (useTexture(["/public/models/dog_normals.jpg",])).map(texture => {
+    const [normalMap, sampleMatCap] = (useTexture([`${BASE}models/dog_normals.jpg`,])).map(texture => {
         texture.flipY = false
         texture.colorSpace = THREE.SRGBColorSpace
         return texture
     })
 
-    const [branchMap, branchNormalMap] = (useTexture(["/public/models/branches_diffuse.jpeg", "/public/models//branches_normals.jpeg"]))
-        .map(texture => {
-            texture.colorSpace = THREE.SRGBColorSpace
-            return texture
-        })
+  const [branchMap, branchNormalMap] = useTexture([
+    `${BASE}models/branches_diffuse.jpeg`,
+    `${BASE}models/branches_normals.jpeg`
+]).map(texture => {
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+});
 
     const dogMaterial = new THREE.MeshMatcapMaterial({
         normalMap: normalMap,
