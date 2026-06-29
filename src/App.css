@@ -54,19 +54,13 @@ section {
   /* border: 2px solid white; */
 }
 
-#canvas::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all .3s linear;
+.canvas-wrapper {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
 
 #section1 {
   min-height: 175vh;

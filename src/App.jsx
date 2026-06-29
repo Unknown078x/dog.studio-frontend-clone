@@ -18,19 +18,27 @@ function App() {
   <img id="sixBg" src={`${BASE}models/sixth.png`} alt="" />
   <img id="sevenBg" src={`${BASE}models/seventh.png`} alt="" />
 </div>
-        <Canvas
-          id='canvas'
-          style={{
-            height: "100vh",
-            width: "100vw",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            zIndex: 2,
-            backgroundImage: `url(${background})`
-          }}>
-          <Dog />
-        </Canvas>
+
+<div
+  className="canvas-wrapper"
+  style={{
+    backgroundImage: `url(${background})`
+  }}
+>
+  <Canvas
+    id="canvas"
+    style={{
+      height: "100vh",
+      width: "100vw",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      zIndex: 2
+    }}
+  >
+    <Dog />
+  </Canvas>
+</div>
         <section id='section1'>
 
           {/* navigation part */}
